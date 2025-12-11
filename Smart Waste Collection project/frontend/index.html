@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Waste Collection Route Optimizer - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar sticky">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo-icon">♻️</div>
+                <h1>Smart Waste Optimizer</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="comparison.html">Models & Comparison</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="dataset.html">Dataset & Simulation</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-image-banner">
+            <div class="hero-image-overlay"></div>
+            <div class="hero-image-content">
+                <div class="container">
+                    <h1>Smart Waste Collection Route Optimizer</h1>
+                    <p class="hero-subtitle">Transform waste management with intelligent route optimization. Reduce costs, minimize environmental impact, and enhance operational efficiency through advanced AI algorithms.</p>
+                    <div class="hero-buttons">
+                        <a href="dashboard.html" class="btn btn-primary">Get Started</a>
+                        <a href="how-it-works.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive waste management solutions powered by cutting-edge technology</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎯</div>
+                        <h3>Route Optimization</h3>
+                        <p>Advanced algorithms (A* Search and Genetic Algorithm) to find the most efficient collection routes, reducing travel time and fuel consumption.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Real-time Monitoring</h3>
+                        <p>Track bin fill levels in real-time with color-coded visualizations on interactive maps for instant decision-making.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚡</div>
+                        <h3>Performance Analytics</h3>
+                        <p>Compare algorithm performance with detailed metrics including distance, time, cost analysis, and efficiency ratings.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔄</div>
+                        <h3>Simulation Engine</h3>
+                        <p>Test different scenarios with random, manual, and time-based simulation modes to plan for various conditions.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💰</div>
+                        <h3>Cost Management</h3>
+                        <p>Reduce fuel costs and operational expenses through optimized route planning and resource allocation.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌍</div>
+                        <h3>Environmental Sustainability</h3>
+                        <p>Minimize carbon footprint by reducing travel distance and fuel consumption, contributing to a greener future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="organization-info">
+            <div class="container">
+                <div class="organization-card">
+                    <div class="organization-content">
+                        <h2>About Our Organization</h2>
+                        <p class="organization-intro">We are dedicated to revolutionizing waste management through innovative technology and data-driven solutions. Our mission is to create smarter, more efficient, and environmentally sustainable waste collection systems for municipalities and organizations worldwide.</p>
+                        <div class="organization-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">🎯</div>
+                                <div class="detail-content">
+                                    <h4>Mission-Driven</h4>
+                                    <p>Committed to reducing waste management costs and environmental impact through intelligent optimization.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">🔬</div>
+                                <div class="detail-content">
+                                    <h4>Technology-Forward</h4>
+                                    <p>Leveraging cutting-edge algorithms and real-time data analytics for superior performance.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">🤝</div>
+                                <div class="detail-content">
+                                    <h4>Community-Focused</h4>
+                                    <p>Serving municipalities, waste management companies, and communities with reliable, scalable solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="about.html" class="btn btn-outline">Learn More About Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <h2 class="section-title">Our Partners</h2>
+                <p class="section-subtitle">Collaborating with leading organizations to build sustainable waste management solutions</p>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-icon">🏛️</div>
+                        <h4>Municipal Governments</h4>
+                        <p>Supporting city-wide waste management initiatives</p>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-icon">🏢</div>
+                        <h4>Waste Management Companies</h4>
+                        <p>Empowering operations with intelligent routing systems</p>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-icon">🌱</div>
+                        <h4>Environmental Organizations</h4>
+                        <p>Promoting sustainable practices and green initiatives</p>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-icon">🔬</div>
+                        <h4>Research Institutions</h4>
+                        <p>Advancing waste management through academic collaboration</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="messages">
+            <div class="container">
+                <h2 class="section-title">Key Messages</h2>
+                <div class="messages-grid">
+                    <div class="message-card message-primary">
+                        <div class="message-icon">💡</div>
+                        <h3>Innovation</h3>
+                        <p>Leading the way with state-of-the-art algorithms and real-time monitoring capabilities that set new standards in waste management efficiency.</p>
+                    </div>
+                    <div class="message-card message-success">
+                        <div class="message-icon">✅</div>
+                        <h3>Reliability</h3>
+                        <p>Trusted by municipalities and organizations for consistent, accurate route optimization that delivers measurable results.</p>
+                    </div>
+                    <div class="message-card message-warning">
+                        <div class="message-icon">🌿</div>
+                        <h3>Sustainability</h3>
+                        <p>Committed to reducing environmental impact through smart routing that minimizes fuel consumption and carbon emissions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">A simple, streamlined process for optimal waste collection management</p>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <h3>Monitor Bins</h3>
+                        <p>Track fill levels of all waste bins in real-time through integrated sensor technology</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <h3>Select Algorithm</h3>
+                        <p>Choose between A* Search or Genetic Algorithm for optimization based on your specific needs</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <h3>Generate Route</h3>
+                        <p>System calculates the most efficient collection route using advanced optimization techniques</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <h3>View Results</h3>
+                        <p>Analyze metrics and visualize the optimized route on interactive maps with detailed insights</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="system-architecture">
+            <div class="container">
+                <h2 class="section-title">System Architecture</h2>
+                <p class="section-subtitle">A robust, scalable framework designed for modern waste management</p>
+                <div class="architecture-diagram">
+                    <div class="arch-step">
+                        <div class="arch-icon">📥</div>
+                        <h3>Data Collection</h3>
+                        <p>Bin sensors collect fill level data and location information in real-time</p>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-step">
+                        <div class="arch-icon">🧠</div>
+                        <h3>Algorithm Processing</h3>
+                        <p>A* Search and Genetic Algorithm optimize routes based on bin status and constraints</p>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-step">
+                        <div class="arch-icon">🗺️</div>
+                        <h3>Route Visualization</h3>
+                        <p>Interactive maps display optimized routes with color-coded bins and detailed information</p>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-step">
+                        <div class="arch-icon">📈</div>
+                        <h3>Performance Analysis</h3>
+                        <p>Comprehensive metrics and comparisons help evaluate optimization effectiveness</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="route-visualization">
+            <div class="container">
+                <h2 class="section-title">Live Route Visualization</h2>
+                <p class="section-subtitle">Interactive map showing optimized waste collection routes with real-time data</p>
+                <div class="map-container">
+                    <div id="route-map" class="route-map"></div>
+                </div>
+                <div class="route-summary-container">
+                    <div class="route-summary-box">
+                        <h3>Route Summary</h3>
+                        <div class="route-summary-content">
+                            <div class="summary-metric">
+                                <span class="metric-label">Total Points:</span>
+                                <span class="metric-value" id="total-points">0</span>
+                            </div>
+                            <div class="summary-metric">
+                                <span class="metric-label">Estimated Distance:</span>
+                                <span class="metric-value" id="estimated-distance">0 km</span>
+                            </div>
+                            <div class="summary-metric">
+                                <span class="metric-label">Estimated Time:</span>
+                                <span class="metric-value" id="estimated-time">0 min</span>
+                            </div>
+                            <div class="summary-metric">
+                                <span class="metric-label">Algorithm:</span>
+                                <span class="metric-value" id="algorithm-used">A* Search</span>
+                            </div>
+                            <div class="route-optimization-note">
+                                Route optimized for efficiency and minimal environmental impact
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo-icon">♻️</div>
+                        <h3>Smart Waste Optimizer</h3>
+                    </div>
+                    <p>Optimizing waste collection routes for a cleaner, more sustainable future through intelligent technology and innovative solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="comparison.html">Algorithm Comparison</a></li>
+                        <li><a href="dataset.html">Dataset & Simulation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <ul class="footer-contact">
+                        <li>📧 info@smartwasteoptimizer.gov</li>
+                        <li>📞 +1 (555) 123-4567</li>
+                        <li>📍 123 Government Plaza, City Center</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Smart Waste Collection Route Optimizer. All rights reserved. | A Government-Grade Waste Management Solution</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
+
+

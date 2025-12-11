@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset & Simulation - Smart Waste Collection Route Optimizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar sticky">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🗑️ Smart Waste Optimizer</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="comparison.html">Models & Comparison</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="dataset.html" class="active">Dataset & Simulation</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Dataset & Simulation</h1>
+                <p>Manage bin data and run simulations</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="simulation-tabs">
+                    <button class="tab-btn active" data-tab="data-table">Data Table</button>
+                    <button class="tab-btn" data-tab="random-sim">Random Simulation</button>
+                    <button class="tab-btn" data-tab="manual-sim">Manual Update</button>
+                    <button class="tab-btn" data-tab="time-sim">Time-based Simulation</button>
+                </div>
+
+                <div id="data-table" class="tab-content active">
+                    <div class="content-card">
+                        <h2>Bin Dataset</h2>
+                        <div class="table-controls">
+                            <button id="refreshTableBtn" class="btn btn-secondary">Refresh Data</button>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Bin ID</th>
+                                        <th>Latitude</th>
+                                        <th>Longitude</th>
+                                        <th>Fill Level (%)</th>
+                                        <th>Capacity</th>
+                                        <th>Status</th>
+                                        <th>Priority</th>
+                                        <th>Last Collected</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dataTableBody">
+                                    <tr>
+                                        <td colspan="8" class="text-center">Loading data...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="random-sim" class="tab-content">
+                    <div class="content-card">
+                        <h2>Random Fill Level Simulation</h2>
+                        <p>Generate random fill levels for all bins to test the optimization system.</p>
+                        <div class="simulation-form">
+                            <div class="form-group">
+                                <label for="randomAlgorithm">Optimization Algorithm (optional):</label>
+                                <select id="randomAlgorithm" class="form-control">
+                                    <option value="">None</option>
+                                    <option value="astar">A* Search</option>
+                                    <option value="genetic">Genetic Algorithm</option>
+                                </select>
+                            </div>
+                            <button id="runRandomSimBtn" class="btn btn-primary">Run Random Simulation</button>
+                        </div>
+                        <div id="randomSimResult" class="simulation-result"></div>
+                    </div>
+                </div>
+
+                <div id="manual-sim" class="tab-content">
+                    <div class="content-card">
+                        <h2>Manual Bin Update</h2>
+                        <p>Manually update fill levels for specific bins.</p>
+                        <div class="simulation-form">
+                            <div id="manualUpdatesContainer">
+                                <div class="manual-update-item">
+                                    <div class="form-group">
+                                        <label>Bin ID:</label>
+                                        <select class="form-control bin-select">
+                                            <option value="">Select Bin</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Fill Level (%):</label>
+                                        <input type="number" class="form-control fill-level-input" min="0" max="100" value="0">
+                                    </div>
+                                    <button class="btn btn-danger remove-update-btn">Remove</button>
+                                </div>
+                            </div>
+                            <button id="addManualUpdateBtn" class="btn btn-secondary">Add Bin Update</button>
+                            <div class="form-group">
+                                <label for="manualAlgorithm">Optimization Algorithm (optional):</label>
+                                <select id="manualAlgorithm" class="form-control">
+                                    <option value="">None</option>
+                                    <option value="astar">A* Search</option>
+                                    <option value="genetic">Genetic Algorithm</option>
+                                </select>
+                            </div>
+                            <button id="runManualSimBtn" class="btn btn-primary">Run Manual Simulation</button>
+                        </div>
+                        <div id="manualSimResult" class="simulation-result"></div>
+                    </div>
+                </div>
+
+                <div id="time-sim" class="tab-content">
+                    <div class="content-card">
+                        <h2>Time-based Simulation</h2>
+                        <p>Simulate gradual fill level increases over time.</p>
+                        <div class="simulation-form">
+                            <div class="form-group">
+                                <label for="simDuration">Duration (minutes):</label>
+                                <input type="number" id="simDuration" class="form-control" min="1" value="60">
+                            </div>
+                            <div class="form-group">
+                                <label for="simInterval">Update Interval (minutes):</label>
+                                <input type="number" id="simInterval" class="form-control" min="1" value="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="timeAlgorithm">Optimization Algorithm (optional):</label>
+                                <select id="timeAlgorithm" class="form-control">
+                                    <option value="">None</option>
+                                    <option value="astar">A* Search</option>
+                                    <option value="genetic">Genetic Algorithm</option>
+                                </select>
+                            </div>
+                            <button id="runTimeSimBtn" class="btn btn-primary">Run Time-based Simulation</button>
+                        </div>
+                        <div id="timeSimResult" class="simulation-result"></div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>Simulation History</h2>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Simulation ID</th>
+                                    <th>Type</th>
+                                    <th>Bins Updated</th>
+                                    <th>Duration</th>
+                                    <th>Created At</th>
+                                </tr>
+                            </thead>
+                            <tbody id="simulationHistoryBody">
+                                <tr>
+                                    <td colspan="5" class="text-center">No simulation history available.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Smart Waste Optimizer</h3>
+                    <p>Optimizing waste collection routes for a cleaner future.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="comparison.html">Algorithm Comparison</a></li>
+                        <li><a href="dataset.html">Dataset & Simulation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Smart Waste Collection Route Optimizer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/dataset.js"></script>
+</body>
+</html>
+
+
+

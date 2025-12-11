@@ -1,0 +1,27 @@
+{
+  "name": "smart-waste-collection-optimizer",
+  "version": "1.0.0",
+  "description": "Smart Waste Collection Route Optimizer - A complete web application for optimizing waste collection routes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["waste", "collection", "route", "optimization", "a-star", "genetic-algorithm"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
+
+
+
+

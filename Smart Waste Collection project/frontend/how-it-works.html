@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Smart Waste Collection Route Optimizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar sticky">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🗑️ Smart Waste Optimizer</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-it-works.html" class="active">How It Works</a></li>
+                <li><a href="comparison.html">Models & Comparison</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="dataset.html">Dataset & Simulation</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>How It Works</h1>
+                <p>Understanding the Smart Waste Collection Route Optimization System</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h2>System Overview</h2>
+                    <p>The Smart Waste Collection Route Optimizer is an intelligent system designed to optimize waste collection routes using advanced algorithms. The system monitors bin fill levels, processes optimization requests, and generates efficient collection routes that minimize distance, time, and cost.</p>
+                </div>
+
+                <div class="content-card">
+                    <h2>Data Pipeline</h2>
+                    <div class="pipeline-steps">
+                        <div class="pipeline-step">
+                            <h3>1. Data Collection</h3>
+                            <p>IoT sensors installed in waste bins continuously monitor fill levels and transmit data to the central system. Each bin is geotagged with precise location coordinates (latitude/longitude).</p>
+                        </div>
+                        <div class="pipeline-step">
+                            <h3>2. Data Storage</h3>
+                            <p>Bin data is stored in MongoDB, including fill levels, locations, capacity, priority status, and last collection timestamp. The system maintains historical data for analysis.</p>
+                        </div>
+                        <div class="pipeline-step">
+                            <h3>3. Route Optimization</h3>
+                            <p>When optimization is requested, the system filters bins that need collection (typically fill level > 30%) and applies either A* Search or Genetic Algorithm to find the optimal route.</p>
+                        </div>
+                        <div class="pipeline-step">
+                            <h3>4. Route Visualization</h3>
+                            <p>Optimized routes are displayed on interactive maps with color-coded bins (green: empty, yellow: partial, red: full) and route lines connecting collection points.</p>
+                        </div>
+                        <div class="pipeline-step">
+                            <h3>5. Performance Metrics</h3>
+                            <p>The system calculates and displays metrics including total distance, estimated time, fuel cost, and algorithm computation time for performance comparison.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>Algorithms</h2>
+                    <div class="algorithm-info">
+                        <div class="algorithm-card">
+                            <h3>A* Search Algorithm</h3>
+                            <p><strong>Type:</strong> Informed search algorithm</p>
+                            <p><strong>Approach:</strong> Uses heuristic function to find optimal path</p>
+                            <p><strong>Advantages:</strong></p>
+                            <ul>
+                                <li>Fast computation time</li>
+                                <li>Guaranteed optimal solution for small datasets</li>
+                                <li>Efficient for real-time optimization</li>
+                            </ul>
+                            <p><strong>Best For:</strong> Small to medium-sized bin networks (up to 50 bins)</p>
+                        </div>
+                        <div class="algorithm-card">
+                            <h3>Genetic Algorithm</h3>
+                            <p><strong>Type:</strong> Evolutionary algorithm</p>
+                            <p><strong>Approach:</strong> Uses population-based search with crossover and mutation</p>
+                            <p><strong>Advantages:</strong></p>
+                            <ul>
+                                <li>Handles large datasets efficiently</li>
+                                <li>Finds near-optimal solutions</li>
+                                <li>Robust to local optima</li>
+                            </ul>
+                            <p><strong>Best For:</strong> Large bin networks (50+ bins) and complex scenarios</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>Optimization Process</h2>
+                    <ol class="process-list">
+                        <li><strong>Input:</strong> System receives bin data with fill levels and locations</li>
+                        <li><strong>Filtering:</strong> Bins with fill level > 30% are selected for collection</li>
+                        <li><strong>Algorithm Selection:</strong> User chooses A* or Genetic Algorithm</li>
+                        <li><strong>Optimization:</strong> Algorithm processes bin locations and generates route</li>
+                        <li><strong>Metrics Calculation:</strong> System calculates distance, time, and cost</li>
+                        <li><strong>Route Storage:</strong> Optimized route is saved to database</li>
+                        <li><strong>Visualization:</strong> Route is displayed on interactive map</li>
+                    </ol>
+                </div>
+
+                <div class="content-card">
+                    <h2>Key Metrics</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <h4>Total Distance</h4>
+                            <p>Sum of all route segments in kilometers, calculated using Haversine formula</p>
+                        </div>
+                        <div class="metric-item">
+                            <h4>Estimated Time</h4>
+                            <p>Total collection time including travel and bin emptying time</p>
+                        </div>
+                        <div class="metric-item">
+                            <h4>Fuel Cost</h4>
+                            <p>Estimated fuel cost based on distance and fuel efficiency</p>
+                        </div>
+                        <div class="metric-item">
+                            <h4>Computation Time</h4>
+                            <p>Time taken by algorithm to generate the route</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Smart Waste Optimizer</h3>
+                    <p>Optimizing waste collection routes for a cleaner future.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="comparison.html">Algorithm Comparison</a></li>
+                        <li><a href="dataset.html">Dataset & Simulation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Smart Waste Collection Route Optimizer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+</body>
+</html>
+
+
+
