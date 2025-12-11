@@ -1,4 +1,3 @@
-# Smart-Waste-Collection-project
 # Smart Waste Collection Route Optimizer
 
 A complete, production-ready web application for optimizing waste collection routes using advanced algorithms (A* Search and Genetic Algorithm). The system provides real-time bin monitoring, route optimization, performance comparison, and simulation capabilities.
